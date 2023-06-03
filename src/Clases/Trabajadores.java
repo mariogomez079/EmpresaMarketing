@@ -8,7 +8,7 @@ package Clases;
  *
  * @author mariogomez
  */
-public class Trabajadores {
+public abstract class Trabajadores {
     private String nombre;
     private String email;
     private String cargo;
@@ -37,5 +37,5 @@ public class Trabajadores {
         this.cargo = cargo;
     }
     
-    
+    public abstract double Salario();
 }

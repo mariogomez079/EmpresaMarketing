@@ -9,15 +9,5 @@ package Clases;
  * @author mariogomez
  */
 public class TiempoCompleto {
-    double cantidadhorassemanales;
-
-    public double getCantidadhorassemanales() {
-        return cantidadhorassemanales;
-    }
-
-    public void setCantidadhorassemanales(double cantidadhorassemanales) {
-        this.cantidadhorassemanales = cantidadhorassemanales;
-    }
-    
     
 }

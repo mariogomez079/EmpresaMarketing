@@ -20,7 +20,17 @@ public class Becario extends Trabajadores {
     public void setGraduado(boolean graduado) {
         this.graduado = graduado;
     }
-       
+     
+    @Override
+   public double Salario(){
+    if(isGraduado() == true)
+    {
+        return 3000;
+    }
+    else{
+        return 1500;
+    }
+   }
     
     
 }

@@ -9,5 +9,14 @@ package Clases;
  * @author mariogomez
  */
 public class TiempParcial {
+    double cantidadhorassemanales;
+
+    public double getCantidadhorassemanales() {
+        return cantidadhorassemanales;
+    }
+
+    public void setCantidadhorassemanales(double cantidadhorassemanales) {
+        this.cantidadhorassemanales = cantidadhorassemanales;
+    }
     
 }
