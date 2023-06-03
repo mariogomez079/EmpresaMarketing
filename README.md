@@ -7,6 +7,7 @@ De los trabajadores, se conoce el nombre, la dirección de correo electrónico y
 Todos los proyectos tienen un valor de esfuerzo estimado que se determina de la siguiente manera:
 
 Nacional (cantidad de semanas de duración * costo en pesos mexicanos) / 0.5
+
 Internacional (cantidad de semanas de duración * costo en dólares) 
 
 Los trabajadores reciben un salario, que se determina de la siguiente manera:
