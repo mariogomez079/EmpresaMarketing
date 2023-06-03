@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Clases;
-
+import java.time.Duration;
 /**
  *
  * @author mariogomez
@@ -18,7 +18,6 @@ public class Nacional extends Productos{
     public void setCostopesos(double costomx) {
         this.costomx = costomx;
     }
-    
     
     
 }

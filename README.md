@@ -6,16 +6,14 @@ De los trabajadores, se conoce el nombre, la dirección de correo electrónico y
 
 Todos los proyectos tienen un valor de esfuerzo estimado que se determina de la siguiente manera:
 
-Nacional (cantidad de semanas de duración * costo en pesos mexicanos) / (0.5 * cantidad de trabajadores asignados)
-Internacional (cantidad de semanas de duración * costo en dólares) / (cantidad de trabajadores asignados)
+Nacional (cantidad de semanas de duración * costo en pesos mexicanos) / 0.5
+Internacional (cantidad de semanas de duración * costo en dólares) 
 
 Los trabajadores reciben un salario, que se determina de la siguiente manera:
 
 Para empleados a tiempo completo: 5000 + (1.5 * índice según el cargo). El índice toma un valor de 400 para los cargos de gerente y 250 para los demás cargos.
 Para empleados a tiempo parcial: 2500 * cantidad de horas trabajadas por semana * índice según el cargo. El índice toma un valor de 200 para los cargos de asistente y 150 para los demás cargos.
 Para becarios: Salario base - (3000 si es graduado, o 1500 si no lo es)
-
-La empresa también realiza evaluaciones periódicas de los trabajadores y proyectos. La evaluación de un trabajador se realiza mediante una encuesta de satisfacción y se califica de la siguiente manera:
 
 Muy bueno - Si la puntuación de la encuesta es de 8 o más.
 Bueno - Si la puntuación de la encuesta está entre 6 y 7.9.

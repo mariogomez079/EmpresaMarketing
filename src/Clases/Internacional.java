@@ -4,6 +4,8 @@
  */
 package Clases;
 
+import java.time.Duration;
+
 /**
  *
  * @author mariogomez
@@ -28,7 +30,7 @@ public class Internacional  extends Productos {
         this.pais = pais;
     }
     
-    
+   
     
     
     
