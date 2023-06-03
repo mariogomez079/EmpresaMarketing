@@ -9,5 +9,33 @@ package Clases;
  * @author mariogomez
  */
 public class Trabajadores {
+    private String nombre;
+    private String email;
+    private String cargo;
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getCargo() {
+        return cargo;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setCargo(String cargo) {
+        this.cargo = cargo;
+    }
+    
     
 }

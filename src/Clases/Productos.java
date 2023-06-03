@@ -9,7 +9,7 @@ import java.util.Date;
  *
  * @author mariogomez
  */
-public class Productos {
+public class Productos extends Empresa {
      private String nombre;
      private String descripcion;
      private Date fechainicio;
