@@ -8,6 +8,17 @@ package Clases;
  *
  * @author mariogomez
  */
-public class TiempoCompleto {
+public class TiempoCompleto extends Trabajadores {
     
+     @Override
+    public double Salario(){
+        if (getCargo() == "Gerente")
+        {
+            return 5000 + (1.5 * 400);
+              }
+        else{
+            return 5000 + (1.5 * 250);
+        }
+    }
+
 }

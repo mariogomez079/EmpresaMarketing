@@ -11,8 +11,8 @@ Internacional (cantidad de semanas de duración * costo en dólares) / (cantidad
 
 Los trabajadores reciben un salario, que se determina de la siguiente manera:
 
-Para empleados a tiempo completo: Salario base + (1.5 * salario base) * años de experiencia * índice según el cargo. El índice toma un valor de 400 para los cargos de gerente y 250 para los demás cargos.
-Para empleados a tiempo parcial: Salario base * cantidad de horas trabajadas por semana * índice según el cargo. El índice toma un valor de 200 para los cargos de asistente y 150 para los demás cargos.
+Para empleados a tiempo completo: 5000 + (1.5 * índice según el cargo). El índice toma un valor de 400 para los cargos de gerente y 250 para los demás cargos.
+Para empleados a tiempo parcial: 2500 * cantidad de horas trabajadas por semana * índice según el cargo. El índice toma un valor de 200 para los cargos de asistente y 150 para los demás cargos.
 Para becarios: Salario base - (3000 si es graduado, o 1500 si no lo es)
 
 La empresa también realiza evaluaciones periódicas de los trabajadores y proyectos. La evaluación de un trabajador se realiza mediante una encuesta de satisfacción y se califica de la siguiente manera:
@@ -36,7 +36,7 @@ b) Desarrolle una aplicación con interfaz gráfica que permita
     Eliminar un trabajador del cual se conoce su nombre
     Conocer la cantidad de proyectos de cada tipo que tiene la empresa
     Evaluar a los trabajadores y proyectos
-    Determinar el salario de un trabajador dada su salario base
+    Determinar el salario de un trabajador
     Conocer la cantidad de trabajadores becarios que son graduados
     Conocer el nombre del proyecto internacional con mayor costo real.
 
