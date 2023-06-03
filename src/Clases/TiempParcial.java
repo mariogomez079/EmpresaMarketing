@@ -8,7 +8,7 @@ package Clases;
  *
  * @author mariogomez
  */
-public class TiempParcial {
+public class TiempParcial extends Trabajadores{
     double cantidadhorassemanales;
 
     public double getCantidadhorassemanales() {
@@ -19,4 +19,14 @@ public class TiempParcial {
         this.cantidadhorassemanales = cantidadhorassemanales;
     }
     
+     @Override
+    public double Salario(){
+        if (getCargo() == "Asistente")
+        {
+            return 2500 + (getCantidadhorassemanales() * 200);
+              }
+        else{
+            return 2500 + (getCantidadhorassemanales() * 150);
+        }
+    }
 }
