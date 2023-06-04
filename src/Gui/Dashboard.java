@@ -6,6 +6,7 @@ package Gui;
 
 import Gui.Trabajadores.AgregarTrabajadores;
 import Gui.Trabajadores.ListarTrabajadores;
+import javax.swing.JTextArea;
 
 /**
  *
@@ -200,7 +201,8 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
          ListarTrabajadores abrir = new ListarTrabajadores();
-         abrir.setVisible(rootPaneCheckingEnabled);
+         abrir.setVisible(true);
+         
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
