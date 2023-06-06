@@ -37,6 +37,17 @@ public class JFrameDashboad extends javax.swing.JFrame {
         jMenuItemAgregarTrabajadores = new javax.swing.JMenuItem();
         jMenuItemModificarTrabajadores = new javax.swing.JMenuItem();
         jMenuItemEliminarTrabajadores = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+        jMenuItemListarProyectos = new javax.swing.JMenuItem();
+        jMenuItemAgregarProyectos = new javax.swing.JMenuItem();
+        jMenuItemModificarProyectos = new javax.swing.JMenuItem();
+        jMenuItemEliminarProyectos = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
+        jMenuItemListarFacturas = new javax.swing.JMenuItem();
+        jMenuItemAgregarFacturas = new javax.swing.JMenuItem();
+        jMenuItemModificarFacturas = new javax.swing.JMenuItem();
+        jMenuItemEliminarFacturas = new javax.swing.JMenuItem();
+        jMenu5 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -87,6 +98,41 @@ public class JFrameDashboad extends javax.swing.JFrame {
         jMenu2.add(jMenuItemEliminarTrabajadores);
 
         jMenuBar1.add(jMenu2);
+
+        jMenu3.setText("Proyectos");
+
+        jMenuItemListarProyectos.setText("Listar");
+        jMenu3.add(jMenuItemListarProyectos);
+
+        jMenuItemAgregarProyectos.setText("Agregar");
+        jMenu3.add(jMenuItemAgregarProyectos);
+
+        jMenuItemModificarProyectos.setText("Modificar");
+        jMenu3.add(jMenuItemModificarProyectos);
+
+        jMenuItemEliminarProyectos.setText("Eliminar");
+        jMenu3.add(jMenuItemEliminarProyectos);
+
+        jMenuBar1.add(jMenu3);
+
+        jMenu4.setText("Facturas");
+
+        jMenuItemListarFacturas.setText("Listar");
+        jMenu4.add(jMenuItemListarFacturas);
+
+        jMenuItemAgregarFacturas.setText("Agregar");
+        jMenu4.add(jMenuItemAgregarFacturas);
+
+        jMenuItemModificarFacturas.setText("Modificar");
+        jMenu4.add(jMenuItemModificarFacturas);
+
+        jMenuItemEliminarFacturas.setText("Eliminar");
+        jMenu4.add(jMenuItemEliminarFacturas);
+
+        jMenuBar1.add(jMenu4);
+
+        jMenu5.setText("Opciones");
+        jMenuBar1.add(jMenu5);
 
         setJMenuBar(jMenuBar1);
 
@@ -172,10 +218,21 @@ public class JFrameDashboad extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItemAgregarFacturas;
+    private javax.swing.JMenuItem jMenuItemAgregarProyectos;
     private javax.swing.JMenuItem jMenuItemAgregarTrabajadores;
+    private javax.swing.JMenuItem jMenuItemEliminarFacturas;
+    private javax.swing.JMenuItem jMenuItemEliminarProyectos;
     private javax.swing.JMenuItem jMenuItemEliminarTrabajadores;
+    private javax.swing.JMenuItem jMenuItemListarFacturas;
+    private javax.swing.JMenuItem jMenuItemListarProyectos;
     private javax.swing.JMenuItem jMenuItemListarTrabajadores;
+    private javax.swing.JMenuItem jMenuItemModificarFacturas;
+    private javax.swing.JMenuItem jMenuItemModificarProyectos;
     private javax.swing.JMenuItem jMenuItemModificarTrabajadores;
     private javax.swing.JMenuItem jMenuItemSalir;
     // End of variables declaration//GEN-END:variables
