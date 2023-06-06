@@ -6,6 +6,7 @@ package Gui;
 import Gui.Trabajadores.JFrameAgregarTrabajadores;
 import Gui.Trabajadores.JFrameEliminarTrabajadores;
 import Gui.Trabajadores.JFrameListarTrabajadores;
+import Gui.Trabajadores.JFrameModificarTrabajadores;
 /**
  *
  * @author mariogomez
@@ -70,6 +71,11 @@ public class JFrameDashboad extends javax.swing.JFrame {
         jMenu2.add(jMenuItemAgregarTrabajadores);
 
         jMenuItemModificarTrabajadores.setText("Modificar");
+        jMenuItemModificarTrabajadores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemModificarTrabajadoresActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItemModificarTrabajadores);
 
         jMenuItemEliminarTrabajadores.setText("Eliminar");
@@ -120,6 +126,12 @@ public class JFrameDashboad extends javax.swing.JFrame {
         ListarTrabajadores.setVisible(true);
         dispose();
     }//GEN-LAST:event_jMenuItemListarTrabajadoresActionPerformed
+
+    private void jMenuItemModificarTrabajadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemModificarTrabajadoresActionPerformed
+        JFrameModificarTrabajadores ModificarTrabajadores = new JFrameModificarTrabajadores();
+        ModificarTrabajadores.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jMenuItemModificarTrabajadoresActionPerformed
 
     /**
      * @param args the command line arguments
