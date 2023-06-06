@@ -5,8 +5,8 @@
         <group>
             <file>file:/home/mariogomez/Documents/GitHub/EmpresaMarketing/src/Gui/JFrameDashboad.java</file>
             <file>file:/home/mariogomez/Documents/GitHub/EmpresaMarketing/src/Gui/Trabajadores/JFrameModificarTrabajadores.java</file>
-            <file>file:/home/mariogomez/Documents/GitHub/EmpresaMarketing/src/Gui/Trabajadores/JFrameAgregarTrabajadores.java</file>
-            <file>file:/home/mariogomez/Documents/GitHub/EmpresaMarketing/src/Gui/Trabajadores/JFrameListarTrabajadores.java</file>
+            <file>file:/home/mariogomez/Documents/GitHub/EmpresaMarketing/src/Gui/Facturas/JFrameModificarFacturas.java</file>
+            <file>file:/home/mariogomez/Documents/GitHub/EmpresaMarketing/src/Gui/Facturas/JFrameEliminarFacturas.java</file>
             <file>file:/home/mariogomez/Documents/GitHub/EmpresaMarketing/src/Gui/Trabajadores/JFrameEliminarTrabajadores.java</file>
         </group>
     </open-files>

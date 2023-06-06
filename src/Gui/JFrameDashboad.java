@@ -8,7 +8,10 @@ import Gui.Trabajadores.JFrameEliminarTrabajadores;
 import Gui.Trabajadores.JFrameListarTrabajadores;
 import Gui.Trabajadores.JFrameModificarTrabajadores;
 import Gui.Facturas.JFrameAgregarFacturas;
+import Gui.Facturas.JFrameListarFacturas;
 import Gui.Facturas.JFrameModificarFacturas;
+import Gui.Facturas.JFrameEliminarFacturas;
+        
 /**
  *
  * @author mariogomez
@@ -123,6 +126,11 @@ public class JFrameDashboad extends javax.swing.JFrame {
         jMenu4.setText("Facturas");
 
         jMenuItemListarFacturas.setText("Listar");
+        jMenuItemListarFacturas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemListarFacturasActionPerformed(evt);
+            }
+        });
         jMenu4.add(jMenuItemListarFacturas);
 
         jMenuItemAgregarFacturas.setText("Agregar");
@@ -142,6 +150,11 @@ public class JFrameDashboad extends javax.swing.JFrame {
         jMenu4.add(jMenuItemModificarFacturas);
 
         jMenuItemEliminarFacturas.setText("Eliminar");
+        jMenuItemEliminarFacturas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemEliminarFacturasActionPerformed(evt);
+            }
+        });
         jMenu4.add(jMenuItemEliminarFacturas);
 
         jMenuBar1.add(jMenu4);
@@ -215,6 +228,18 @@ public class JFrameDashboad extends javax.swing.JFrame {
         ModificarFacturas.setVisible(true);
         dispose();
     }//GEN-LAST:event_jMenuItemModificarFacturasActionPerformed
+
+    private void jMenuItemListarFacturasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemListarFacturasActionPerformed
+        JFrameListarFacturas ListarFacturas = new JFrameListarFacturas();
+        ListarFacturas.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jMenuItemListarFacturasActionPerformed
+
+    private void jMenuItemEliminarFacturasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemEliminarFacturasActionPerformed
+        JFrameEliminarFacturas EliminarFacturas = new JFrameEliminarFacturas();
+        EliminarFacturas.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jMenuItemEliminarFacturasActionPerformed
 
     /**
      * @param args the command line arguments
