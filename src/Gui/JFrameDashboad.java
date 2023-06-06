@@ -7,6 +7,8 @@ import Gui.Trabajadores.JFrameAgregarTrabajadores;
 import Gui.Trabajadores.JFrameEliminarTrabajadores;
 import Gui.Trabajadores.JFrameListarTrabajadores;
 import Gui.Trabajadores.JFrameModificarTrabajadores;
+import Gui.Facturas.JFrameAgregarFacturas;
+import Gui.Facturas.JFrameModificarFacturas;
 /**
  *
  * @author mariogomez
@@ -124,9 +126,19 @@ public class JFrameDashboad extends javax.swing.JFrame {
         jMenu4.add(jMenuItemListarFacturas);
 
         jMenuItemAgregarFacturas.setText("Agregar");
+        jMenuItemAgregarFacturas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemAgregarFacturasActionPerformed(evt);
+            }
+        });
         jMenu4.add(jMenuItemAgregarFacturas);
 
         jMenuItemModificarFacturas.setText("Modificar");
+        jMenuItemModificarFacturas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemModificarFacturasActionPerformed(evt);
+            }
+        });
         jMenu4.add(jMenuItemModificarFacturas);
 
         jMenuItemEliminarFacturas.setText("Eliminar");
@@ -191,6 +203,18 @@ public class JFrameDashboad extends javax.swing.JFrame {
         ModificarTrabajadores.setVisible(true);
         dispose();
     }//GEN-LAST:event_jMenuItemModificarTrabajadoresActionPerformed
+
+    private void jMenuItemAgregarFacturasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemAgregarFacturasActionPerformed
+        JFrameAgregarFacturas AgregarFacturas = new JFrameAgregarFacturas();
+        AgregarFacturas.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jMenuItemAgregarFacturasActionPerformed
+
+    private void jMenuItemModificarFacturasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemModificarFacturasActionPerformed
+        JFrameModificarFacturas ModificarFacturas = new JFrameModificarFacturas();
+        ModificarFacturas.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jMenuItemModificarFacturasActionPerformed
 
     /**
      * @param args the command line arguments
