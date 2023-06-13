@@ -3,14 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Gui;
-import Gui.Trabajadores.JFrameAgregarTrabajadores;
-import Gui.Trabajadores.JFrameEliminarTrabajadores;
-import Gui.Trabajadores.JFrameListarTrabajadores;
-import Gui.Trabajadores.JFrameModificarTrabajadores;
-import Gui.Facturas.JFrameAgregarFacturas;
-import Gui.Facturas.JFrameListarFacturas;
-import Gui.Facturas.JFrameModificarFacturas;
-import Gui.Facturas.JFrameEliminarFacturas;
         
 /**
  *
@@ -37,25 +29,6 @@ public class JFrameDashboad extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItemSalir = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuItemListarTrabajadores = new javax.swing.JMenuItem();
-        jMenuItemAgregarTrabajadores = new javax.swing.JMenuItem();
-        jMenuItemModificarTrabajadores = new javax.swing.JMenuItem();
-        jMenuItemEliminarTrabajadores = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
-        jMenuItemListarProyectos = new javax.swing.JMenuItem();
-        jMenuItemAgregarProyectos = new javax.swing.JMenuItem();
-        jMenuItemModificarProyectos = new javax.swing.JMenuItem();
-        jMenuItemEliminarProyectos = new javax.swing.JMenuItem();
-        jMenu4 = new javax.swing.JMenu();
-        jMenuItemListarFacturas = new javax.swing.JMenuItem();
-        jMenuItemAgregarFacturas = new javax.swing.JMenuItem();
-        jMenuItemModificarFacturas = new javax.swing.JMenuItem();
-        jMenuItemEliminarFacturas = new javax.swing.JMenuItem();
-        jMenu5 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -70,107 +43,6 @@ public class JFrameDashboad extends javax.swing.JFrame {
         jMenu1.add(jMenuItemSalir);
 
         jMenuBar1.add(jMenu1);
-
-        jMenu2.setText("Trabajadores");
-
-        jMenuItemListarTrabajadores.setText("Listar");
-        jMenuItemListarTrabajadores.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItemListarTrabajadoresActionPerformed(evt);
-            }
-        });
-        jMenu2.add(jMenuItemListarTrabajadores);
-
-        jMenuItemAgregarTrabajadores.setText("Agregar");
-        jMenuItemAgregarTrabajadores.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItemAgregarTrabajadoresActionPerformed(evt);
-            }
-        });
-        jMenu2.add(jMenuItemAgregarTrabajadores);
-
-        jMenuItemModificarTrabajadores.setText("Modificar");
-        jMenuItemModificarTrabajadores.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItemModificarTrabajadoresActionPerformed(evt);
-            }
-        });
-        jMenu2.add(jMenuItemModificarTrabajadores);
-
-        jMenuItemEliminarTrabajadores.setText("Eliminar");
-        jMenuItemEliminarTrabajadores.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItemEliminarTrabajadoresActionPerformed(evt);
-            }
-        });
-        jMenu2.add(jMenuItemEliminarTrabajadores);
-
-        jMenuBar1.add(jMenu2);
-
-        jMenu3.setText("Proyectos");
-
-        jMenuItemListarProyectos.setText("Listar");
-        jMenu3.add(jMenuItemListarProyectos);
-
-        jMenuItemAgregarProyectos.setText("Agregar");
-        jMenu3.add(jMenuItemAgregarProyectos);
-
-        jMenuItemModificarProyectos.setText("Modificar");
-        jMenu3.add(jMenuItemModificarProyectos);
-
-        jMenuItemEliminarProyectos.setText("Eliminar");
-        jMenu3.add(jMenuItemEliminarProyectos);
-
-        jMenuBar1.add(jMenu3);
-
-        jMenu4.setText("Facturas");
-
-        jMenuItemListarFacturas.setText("Listar");
-        jMenuItemListarFacturas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItemListarFacturasActionPerformed(evt);
-            }
-        });
-        jMenu4.add(jMenuItemListarFacturas);
-
-        jMenuItemAgregarFacturas.setText("Agregar");
-        jMenuItemAgregarFacturas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItemAgregarFacturasActionPerformed(evt);
-            }
-        });
-        jMenu4.add(jMenuItemAgregarFacturas);
-
-        jMenuItemModificarFacturas.setText("Modificar");
-        jMenuItemModificarFacturas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItemModificarFacturasActionPerformed(evt);
-            }
-        });
-        jMenu4.add(jMenuItemModificarFacturas);
-
-        jMenuItemEliminarFacturas.setText("Eliminar");
-        jMenuItemEliminarFacturas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItemEliminarFacturasActionPerformed(evt);
-            }
-        });
-        jMenu4.add(jMenuItemEliminarFacturas);
-
-        jMenuBar1.add(jMenu4);
-
-        jMenu5.setText("Opciones");
-
-        jMenuItem1.setText("Calcular Salario");
-        jMenu5.add(jMenuItem1);
-
-        jMenuItem2.setText("Evaluacion de Proyectos");
-        jMenu5.add(jMenuItem2);
-
-        jMenuItem3.setText("Cantidad de Proyectos por tipo");
-        jMenu5.add(jMenuItem3);
-
-        jMenuBar1.add(jMenu5);
 
         setJMenuBar(jMenuBar1);
 
@@ -192,54 +64,6 @@ public class JFrameDashboad extends javax.swing.JFrame {
     private void jMenuItemSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemSalirActionPerformed
         System.exit(0);
     }//GEN-LAST:event_jMenuItemSalirActionPerformed
-
-    private void jMenuItemAgregarTrabajadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemAgregarTrabajadoresActionPerformed
-        JFrameAgregarTrabajadores AbrirAgregarTrabajadores = new JFrameAgregarTrabajadores();
-        AbrirAgregarTrabajadores.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_jMenuItemAgregarTrabajadoresActionPerformed
-
-    private void jMenuItemEliminarTrabajadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemEliminarTrabajadoresActionPerformed
-        JFrameEliminarTrabajadores EliminarTrabajadores = new JFrameEliminarTrabajadores();
-        EliminarTrabajadores.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_jMenuItemEliminarTrabajadoresActionPerformed
-
-    private void jMenuItemListarTrabajadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemListarTrabajadoresActionPerformed
-        JFrameListarTrabajadores ListarTrabajadores = new JFrameListarTrabajadores();
-        ListarTrabajadores.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_jMenuItemListarTrabajadoresActionPerformed
-
-    private void jMenuItemModificarTrabajadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemModificarTrabajadoresActionPerformed
-        JFrameModificarTrabajadores ModificarTrabajadores = new JFrameModificarTrabajadores();
-        ModificarTrabajadores.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_jMenuItemModificarTrabajadoresActionPerformed
-
-    private void jMenuItemAgregarFacturasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemAgregarFacturasActionPerformed
-        JFrameAgregarFacturas AgregarFacturas = new JFrameAgregarFacturas();
-        AgregarFacturas.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_jMenuItemAgregarFacturasActionPerformed
-
-    private void jMenuItemModificarFacturasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemModificarFacturasActionPerformed
-        JFrameModificarFacturas ModificarFacturas = new JFrameModificarFacturas();
-        ModificarFacturas.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_jMenuItemModificarFacturasActionPerformed
-
-    private void jMenuItemListarFacturasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemListarFacturasActionPerformed
-        JFrameListarFacturas ListarFacturas = new JFrameListarFacturas();
-        ListarFacturas.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_jMenuItemListarFacturasActionPerformed
-
-    private void jMenuItemEliminarFacturasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemEliminarFacturasActionPerformed
-        JFrameEliminarFacturas EliminarFacturas = new JFrameEliminarFacturas();
-        EliminarFacturas.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_jMenuItemEliminarFacturasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -279,26 +103,7 @@ public class JFrameDashboad extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItemAgregarFacturas;
-    private javax.swing.JMenuItem jMenuItemAgregarProyectos;
-    private javax.swing.JMenuItem jMenuItemAgregarTrabajadores;
-    private javax.swing.JMenuItem jMenuItemEliminarFacturas;
-    private javax.swing.JMenuItem jMenuItemEliminarProyectos;
-    private javax.swing.JMenuItem jMenuItemEliminarTrabajadores;
-    private javax.swing.JMenuItem jMenuItemListarFacturas;
-    private javax.swing.JMenuItem jMenuItemListarProyectos;
-    private javax.swing.JMenuItem jMenuItemListarTrabajadores;
-    private javax.swing.JMenuItem jMenuItemModificarFacturas;
-    private javax.swing.JMenuItem jMenuItemModificarProyectos;
-    private javax.swing.JMenuItem jMenuItemModificarTrabajadores;
     private javax.swing.JMenuItem jMenuItemSalir;
     // End of variables declaration//GEN-END:variables
 }
