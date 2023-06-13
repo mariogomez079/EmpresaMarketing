@@ -1,4 +1,4 @@
-package Listas;
+package Clases.Utilities;
 
 /*
 * Crear la clase Lista<T> dentro del UML
