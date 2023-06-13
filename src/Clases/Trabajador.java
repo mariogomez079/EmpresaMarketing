@@ -12,6 +12,11 @@ public class Trabajador {
     private String cargo;
 
     // CONSTRUCTOR
+    
+    public Trabajador(){
+    
+    }
+    
     public Trabajador(String nombre, String email, String cargo) {
         this.nombre = nombre;
         this.email = email;

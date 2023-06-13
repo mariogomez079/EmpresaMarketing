@@ -6,6 +6,11 @@ public class TrabajadorBecario extends Trabajador {
     boolean graduado;
 
     // CONSTRUCTOR
+    
+    public TrabajadorBecario() {
+ 
+    }
+    
     public TrabajadorBecario(String nombre, String email, String cargo, boolean graduado) {
         super(nombre, email, cargo);
         this.graduado = graduado;

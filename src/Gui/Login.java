@@ -131,7 +131,7 @@ public class Login extends javax.swing.JFrame {
        }
        else
        {
-       JOptionPane.showMessageDialog(null, "Sus datos no son correctos", "Alerta", JOptionPane.WARNING_MESSAGE);
+       JOptionPane.showMessageDialog(null, "Sus datos no son correctos", "Alerta", JOptionPane.ERROR_MESSAGE);
        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
