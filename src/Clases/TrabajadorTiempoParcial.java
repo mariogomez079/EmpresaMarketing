@@ -14,6 +14,13 @@ public class TrabajadorTiempoParcial extends Trabajador implements IRendimiento 
     }
 
     // IMPLEMENTACION DE SETTERS Y GETTERS
+    
+    public String getSolapin() {
+        return null;
+    }
+    
+    
+    
     public double getCantidadHorasSemanales() {
         return cantidadHorasSemanales;
     }

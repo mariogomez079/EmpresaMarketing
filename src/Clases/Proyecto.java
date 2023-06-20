@@ -8,6 +8,8 @@ public abstract class Proyecto {
     protected double semanasDuracion;
 
     // CONSTRUCTOR
+    
+    
     public Proyecto(String nombre, String descripcion, double semanasDuracion){
         this.nombre = nombre;
         this.descripcion = descripcion;

@@ -1,6 +1,6 @@
 package Clases;
 
-public class Trabajador {
+public abstract class Trabajador {
 
     // ATRIBUTOS
     private String nombre;
@@ -8,6 +8,12 @@ public class Trabajador {
     private String cargo;
 
     // CONSTRUCTOR
+    
+    public Trabajador(){
+    
+    }
+    
+    
     public Trabajador(String nombre, String email, String cargo) {
         this.nombre = nombre;
         this.email = email;
@@ -38,6 +44,10 @@ public class Trabajador {
     public void setCargo(String cargo) {
         this.cargo = cargo;
     }
+    
+    public abstract String getSolapin();
+    public abstract double getCantidadHorasSemanales();
+    public abstract boolean isGraduado();
 
     // IMPLEMENTACION DE METODOS
 

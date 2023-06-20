@@ -6,16 +6,31 @@ public class TrabajadorTiempoCompleto extends Trabajador {
     private String solapin;
 
     // CONSTRUCTOR
+    
+    public TrabajadorTiempoCompleto(){
+    
+    }
+    
     public TrabajadorTiempoCompleto(String nombre, String email, String cargo, String solapin) {
         super(nombre, email, cargo);
         this.solapin = solapin;
     }
 
     // IMPLEMENTACION DE SETTERS Y GETTERS
+    
+    public double getCantidadHorasSemanales() {
+        return 0;
+    }
+    
+    public  boolean isGraduado()
+    {
+     return false;
+    }
+    
     public String getSolapin() {
         return solapin;
     }
-
+     
     public void setSolapin(String solapin) {
         this.solapin = solapin;
     }
