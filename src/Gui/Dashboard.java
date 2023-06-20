@@ -695,6 +695,11 @@ public class Dashboard extends javax.swing.JFrame {
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
     int posicion = jComboBox1.getSelectedIndex();
     empresa.EliminarTrabajador(posicion);
+    jComboBox1.removeAllItems();
+    for(int i=0; i< empresa.LongitudTrabajador();i++)
+        {
+        jComboBox1.addItem(empresa.ObtenerTrabajador(i).getNombre());
+        }
     
         
         
