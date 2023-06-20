@@ -19,6 +19,10 @@ public class TrabajadorTiempoParcial extends Trabajador implements IRendimiento 
         return null;
     }
     
+    public void setSolapin(String solapin) {
+       
+    }
+    
     
     
     public double getCantidadHorasSemanales() {

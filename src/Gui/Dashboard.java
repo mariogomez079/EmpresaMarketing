@@ -43,6 +43,10 @@ public class Dashboard extends javax.swing.JFrame {
         jSpinner1.setVisible(false);
         jRadioButton3.setVisible(false);
         jRadioButton4.setVisible(false);
+        buttonGroup3.add(jRadioButton5);
+        buttonGroup3.add(jRadioButton6);
+        buttonGroup4.add(jRadioButton7);
+        buttonGroup4.add(jRadioButton8);
         jPanel6.setVisible(false);
         
     
@@ -98,6 +102,7 @@ public class Dashboard extends javax.swing.JFrame {
         buttonGroup1 = new javax.swing.ButtonGroup();
         buttonGroup2 = new javax.swing.ButtonGroup();
         buttonGroup3 = new javax.swing.ButtonGroup();
+        buttonGroup4 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -837,7 +842,8 @@ public class Dashboard extends javax.swing.JFrame {
         {
             if(jRadioButton3.isSelected())
             {
-        Trabajador trabajadores = new TrabajadorTiempoParcial(jTextField1.getText(), jTextField2.getText(), jTextField3.getText(),0,true);
+            int valor = (int) jSpinner1.getValue();
+        Trabajador trabajadores = new TrabajadorTiempoParcial(jTextField1.getText(), jTextField2.getText(), jTextField3.getText(),valor,true);
          try {
              empresa.AdicionarTrabajador(trabajadores);
              
@@ -857,7 +863,6 @@ public class Dashboard extends javax.swing.JFrame {
         Trabajador trabajadores = new TrabajadorTiempoParcial(jTextField1.getText(), jTextField2.getText(), jTextField3.getText(),valor,false);
          try {
              empresa.AdicionarTrabajador(trabajadores);
-             
              // Limpiar
              jTextField1.setText(null);
              jTextField2.setText(null);
@@ -925,14 +930,32 @@ public class Dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
-    
-       /* int posicion = jComboBox2.getSelectedIndex();
         try {   
             trabajadores.setNombre(jTextField5.getText());
-            empresa.ActualizarTrabajador(posicion,trabajadores);               
+            trabajadores.setEmail(jTextField6.getText());
+            trabajadores.setCargo(jTextField7.getText());
+            if (jRadioButton5.isSelected())
+            {
+                trabajadores.setSolapin(jTextField8.getText());
+            }
+            else
+            {
+                trabajadores.setSolapin(null);
+                int valor = (int) jSpinner2.getValue();
+                trabajadores.setCantidadHorasSemanales(valor);
+                if(jRadioButton7.isSelected())
+                {
+                    trabajadores.setGraduado(true);
+                }
+                else
+                {
+                 trabajadores.setGraduado(false);
+                }
+            }
+            empresa.ActualizarTrabajador(posicionmodificar,trabajadores);               
         } catch (ListaLlena ex) {
             Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
-        }*/
+        }
         
     
     }//GEN-LAST:event_jButton14ActionPerformed
@@ -945,6 +968,26 @@ public class Dashboard extends javax.swing.JFrame {
     jTextField5.setText(empresa.ObtenerTrabajador(0).getNombre());
     jTextField6.setText(empresa.ObtenerTrabajador(0).getEmail());
     jTextField7.setText(empresa.ObtenerTrabajador(0).getCargo());
+    if(empresa.ObtenerTrabajador(0).getSolapin()!= null)
+    {
+        jRadioButton5.setSelected(true);
+        jTextField8.setText(empresa.ObtenerTrabajador(0).getSolapin());
+
+    }
+    else
+    {
+        jRadioButton6.setSelected(true);
+        jSpinner2.setValue(empresa.ObtenerTrabajador(0).getCantidadHorasSemanales());
+        if(empresa.ObtenerTrabajador(0).isGraduado())
+        {
+            jRadioButton7.setSelected(true);
+        }
+        else
+        {
+            jRadioButton8.setSelected(true);
+        }
+    }
+    
     
       
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -1029,6 +1072,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;
+    private javax.swing.ButtonGroup buttonGroup4;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;

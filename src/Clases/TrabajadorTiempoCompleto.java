@@ -30,9 +30,17 @@ public class TrabajadorTiempoCompleto extends Trabajador {
     public String getSolapin() {
         return solapin;
     }
-     
+    
     public void setSolapin(String solapin) {
         this.solapin = solapin;
+    }
+    
+    public void setCantidadHorasSemanales(double cantidadHorasSemanales) {
+       
+    }
+    
+     public void setGraduado(boolean graduado) {
+       
     }
 
     // IMPLEMENTACION DE METODOS
