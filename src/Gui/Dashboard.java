@@ -21,7 +21,7 @@ public class Dashboard extends javax.swing.JFrame {
     
     Empresa empresa = new Empresa(100,100);
     Trabajador trabajadores;
-    int posicionmodificar =0 ;
+    int posicionmodificar = 0;
     
     
     /**
@@ -159,8 +159,8 @@ public class Dashboard extends javax.swing.JFrame {
         jRadioButton7 = new javax.swing.JRadioButton();
         jLabel20 = new javax.swing.JLabel();
         jRadioButton8 = new javax.swing.JRadioButton();
-        jTextField9 = new javax.swing.JTextField();
         jButton13 = new javax.swing.JButton();
+        jButton15 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -580,7 +580,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         jLabel14.setText("Nombre");
 
-        jLabel15.setText("Buscar Trabajador");
+        jLabel15.setText("Seleccione un trabajador");
 
         jLabel16.setText("Email");
 
@@ -600,10 +600,17 @@ public class Dashboard extends javax.swing.JFrame {
 
         jRadioButton8.setText("No Graduado");
 
-        jButton13.setText("Buscar");
+        jButton13.setText(">");
         jButton13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton13ActionPerformed(evt);
+            }
+        });
+
+        jButton15.setText("<");
+        jButton15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton15ActionPerformed(evt);
             }
         });
 
@@ -640,16 +647,14 @@ public class Dashboard extends javax.swing.JFrame {
                                         .addComponent(jRadioButton7)
                                         .addGap(27, 27, 27)
                                         .addComponent(jRadioButton8))
-                                    .addComponent(jLabel20))
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel6Layout.createSequentialGroup()
-                                        .addComponent(jLabel15)
-                                        .addGap(0, 0, Short.MAX_VALUE))
-                                    .addComponent(jTextField9))
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton13)))))
+                                    .addComponent(jLabel20)
+                                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addGroup(jPanel6Layout.createSequentialGroup()
+                                            .addComponent(jButton15)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jButton13))
+                                        .addComponent(jLabel15)))
+                                .addGap(0, 149, Short.MAX_VALUE)))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton16)
                 .addGap(174, 174, 174))
@@ -659,11 +664,11 @@ public class Dashboard extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
                 .addGap(11, 11, 11)
                 .addComponent(jLabel15)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton13))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton13)
+                    .addComponent(jButton15))
+                .addGap(12, 12, 12)
                 .addComponent(jLabel14)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -690,7 +695,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel20)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jRadioButton7)
                     .addComponent(jRadioButton8))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -737,7 +742,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(56, Short.MAX_VALUE))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
 
         pack();
@@ -776,6 +781,8 @@ public class Dashboard extends javax.swing.JFrame {
        jPanel4.setVisible(false);
        jPanel5.setVisible(false);
        jPanel6.setVisible(false);
+       
+      
         
        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
        model.setRowCount(0);
@@ -787,6 +794,7 @@ public class Dashboard extends javax.swing.JFrame {
         jPanel3.setVisible(false);
         jPanel5.setVisible(false);
         jPanel6.setVisible(false);
+      
        
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -891,6 +899,7 @@ public class Dashboard extends javax.swing.JFrame {
         jPanel3.setVisible(false);
         jPanel6.setVisible(false);
         jComboBox1.removeAllItems();
+        
         for(int i=0; i< empresa.LongitudTrabajador();i++)
         {
         jComboBox1.addItem(empresa.ObtenerTrabajador(i).getNombre());
@@ -898,6 +907,7 @@ public class Dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+
     int posicion = jComboBox1.getSelectedIndex();
     empresa.EliminarTrabajador(posicion);
     jComboBox1.removeAllItems();
@@ -916,13 +926,14 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
     
-/*    int posicion = jComboBox2.getSelectedIndex();
+       /* int posicion = jComboBox2.getSelectedIndex();
         try {   
             trabajadores.setNombre(jTextField5.getText());
             empresa.ActualizarTrabajador(posicion,trabajadores);               
         } catch (ListaLlena ex) {
             Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
         }*/
+        
     
     }//GEN-LAST:event_jButton14ActionPerformed
 
@@ -931,14 +942,11 @@ public class Dashboard extends javax.swing.JFrame {
     jPanel4.setVisible(false);
     jPanel5.setVisible(false);
     jPanel6.setVisible(true);
-    /*int posicion = jComboBox2.getSelectedIndex();
-    jComboBox2.removeAllItems();
-    for(int i=0; i< empresa.LongitudTrabajador();i++)
-        {
-        jComboBox2.addItem(empresa.ObtenerTrabajador(i).getNombre());
-        
-        }*/
-        
+    jTextField5.setText(empresa.ObtenerTrabajador(0).getNombre());
+    jTextField6.setText(empresa.ObtenerTrabajador(0).getEmail());
+    jTextField7.setText(empresa.ObtenerTrabajador(0).getCargo());
+    
+      
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
@@ -953,21 +961,33 @@ public class Dashboard extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
+    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
+       
+        if(posicionmodificar > 0)
+        {
+        --posicionmodificar;
+        empresa.ObtenerTrabajador(posicionmodificar);
+        
+        System.out.println(posicionmodificar);
+        jTextField5.setText(empresa.ObtenerTrabajador(posicionmodificar).getNombre());
+        
+                
+        }
+               
+    }//GEN-LAST:event_jButton15ActionPerformed
+
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
-        for(int i=0; i< empresa.LongitudTrabajador();i++)
+        
+        int longitud = (int) empresa.LongitudTrabajador();
+        longitud--;
+        if(posicionmodificar < longitud)
         {
-              
-        if (jTextField9.getText().equals(empresa.ObtenerTrabajador(i).getNombre()))
-        {
-            jTextField5.setText(empresa.ObtenerTrabajador(i).getNombre());
-            jTextField6.setText(empresa.ObtenerTrabajador(i).getEmail());
-            
-        }
-        else
-        {
-           JOptionPane.showMessageDialog(this, "Nombre no encontrado", "Error", JOptionPane.ERROR_MESSAGE);
-        }
-          
+        ++posicionmodificar;
+        empresa.ObtenerTrabajador(posicionmodificar);  
+        System.out.println(posicionmodificar);
+        jTextField5.setText(empresa.ObtenerTrabajador(posicionmodificar).getNombre());
+        
+        
         }
     }//GEN-LAST:event_jButton13ActionPerformed
 
@@ -997,8 +1017,6 @@ public class Dashboard extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        Empresa empresa = new Empresa(100,100);
-
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -1017,6 +1035,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
+    private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -1076,7 +1095,6 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
     // End of variables declaration//GEN-END:variables
 
 
