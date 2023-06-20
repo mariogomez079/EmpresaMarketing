@@ -1,9 +1,5 @@
 package Clases;
 
-/**
- * Cambiar el UML para que la clase Trabajador no se represente abstracta
- *
- * */
 public class Trabajador {
 
     // ATRIBUTOS
@@ -12,11 +8,6 @@ public class Trabajador {
     private String cargo;
 
     // CONSTRUCTOR
-    
-    public Trabajador(){
-    
-    }
-    
     public Trabajador(String nombre, String email, String cargo) {
         this.nombre = nombre;
         this.email = email;
@@ -50,7 +41,7 @@ public class Trabajador {
 
     // IMPLEMENTACION DE METODOS
 
-    // Salario base de todos los trabajadores es 3000.00
+    // Salario base de todos los trabajadores es 3000.00$ sin contar los NO Graduados
     public double CalcularSalario(){
         return 3000.00;
     }

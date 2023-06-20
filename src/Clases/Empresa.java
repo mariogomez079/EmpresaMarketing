@@ -1,6 +1,6 @@
 package Clases;
 
-import Clases.Utilities.Lista;
+import Excepciones.ListaLlena;
 
 public class Empresa {
 
@@ -15,54 +15,58 @@ public class Empresa {
     }
 
     // ADICIONAR
-    public boolean AdicionarTrabajador(Trabajador trabajador1){
+    public boolean AdicionarTrabajador(Trabajador trabajador1) throws ListaLlena {
         return trabajadores.Adicionar(trabajador1);
     }
 
-    public boolean AdicionarProyecto(Proyecto proyecto1){
+    public boolean AdicionarProyecto(Proyecto proyecto1) throws ListaLlena {
         return proyectos.Adicionar(proyecto1);
     }
 
     // ELIMINAR
-    public boolean EliminarTrabajador(int posicion){
+    public boolean EliminarTrabajador(int posicion) throws IndexOutOfBoundsException, NullPointerException{
         return trabajadores.Eliminar(posicion);
     }
 
-    public boolean EliminarProyecto(int posicion){
+    public boolean EliminarProyecto(int posicion) throws IndexOutOfBoundsException, NullPointerException{
         return proyectos.Eliminar(posicion);
     }
 
     // OBTENER
-    public Trabajador ObtenerTrabajador(int posicion){
+    public Trabajador ObtenerTrabajador(int posicion) throws IndexOutOfBoundsException, NullPointerException{
         return trabajadores.Obtener(posicion);
     }
 
-    public Proyecto ObtenerProyecto(int posicion){
+    public Proyecto ObtenerProyecto(int posicion) throws IndexOutOfBoundsException, NullPointerException{
         return proyectos.Obtener(posicion);
     }
 
     // ACTUALIZAR
-    public boolean ActualizarTrabajador(int posicion, Trabajador trabajador1){
+    public boolean ActualizarTrabajador(int posicion, Trabajador trabajador1) throws ListaLlena {
         return trabajadores.Actualizar(posicion, trabajador1);
     }
 
-    public boolean ActualizarProyecto(int posicion, Proyecto proyecto1){
+    public boolean ActualizarProyecto(int posicion, Proyecto proyecto1) throws ListaLlena {
         return proyectos.Actualizar(posicion, proyecto1);
     }
 
-    // Listar
-    public Trabajador[] ListarTrabajadores(){
-        return trabajadores.ListarElementos();
+    public int LongitudTrabajador(){
+        return trabajadores.Longitud();
     }
 
-    public Proyecto[] ListarProyectos(){
-        return proyectos.ListarElementos();
+    public int LongitudProyecto(){
+        return proyectos.Longitud();
+    }
+
+    public boolean ProyectoVacio(){
+        return proyectos.isVacia();
+    }
+
+    public boolean TrabajadorVacio(){
+        return trabajadores.isVacia();
     }
 
     // IMPLEMENTACION DE SETTERS Y GETTERS
 
     // IMPLEMENTACION DE METODOS
-//    public String Evaluacion(){
-//
-//    }
 }

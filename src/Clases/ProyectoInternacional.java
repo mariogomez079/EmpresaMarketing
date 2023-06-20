@@ -2,7 +2,7 @@ package Clases;
 
 import java.util.Date;
 
-import static Clases.Utilities.CantidadDeSemanas.ProyectoCantidadSemanasDuracion;
+//import static Clases.Utilities.CantidadDeSemanas.ProyectoCantidadSemanasDuracion;
 
 public class ProyectoInternacional extends Proyecto {
 
@@ -11,14 +11,22 @@ public class ProyectoInternacional extends Proyecto {
     private String nombrePais;
 
     // CONSTRUCTOR
-    public ProyectoInternacional(String nombre, String descripcion, Date fechaInicio, Date fechaFin, double costoDolar, String nombrePais) {
-        super(nombre, descripcion, fechaInicio, fechaFin);
+    public ProyectoInternacional(String nombre, String descripcion, double semanasDuracion) {
+        super(nombre, descripcion, semanasDuracion);
+    }
+
+    public ProyectoInternacional(String nombre, String descripcion, double semanasDuracion, double costoDolar) {
+        super(nombre, descripcion, semanasDuracion);
         this.costoDolar = costoDolar;
+    }
+
+    public ProyectoInternacional(String nombre, String descripcion, double semanasDuracion, String nombrePais) {
+        super(nombre, descripcion, semanasDuracion);
         this.nombrePais = nombrePais;
     }
 
-    public ProyectoInternacional(String nombre, String descripcion, Date fechaInicio, Date fechaFin, double costoAproximado, double costoDolar, String nombrePais) {
-        super(nombre, descripcion, fechaInicio, fechaFin, costoAproximado);
+    public ProyectoInternacional(String nombre, String descripcion, double semanasDuracion, double costoDolar, String nombrePais) {
+        super(nombre, descripcion, semanasDuracion);
         this.costoDolar = costoDolar;
         this.nombrePais = nombrePais;
     }
@@ -41,11 +49,13 @@ public class ProyectoInternacional extends Proyecto {
     }
 
     // IMPLEMENTACION DE METODOS
-
     @Override
-    // Internacional (cantidad de semanas de duración * costo en dólares)
-    public double ValorPorEsfuerzo(Date fechaInicio, Date fechaFin) {
-        long semanasDeDuracion = ProyectoCantidadSemanasDuracion(fechaInicio,fechaFin);
-        return semanasDeDuracion * this.getCostoDolar();
+    public double CalcularCostoProyecto() {
+        // El coste del proyecto internacional se calcula como [cantidad de semanas de duración * costo en dólares] y por tanto es (coste + el 15% del coste) * 7.25
+        return (CalcularCosto() + (CalcularCosto() * 0.15)) * 7.25;
+    }
+
+    private double CalcularCosto(){
+        return super.getSemanasDuracion() * this.getCostoDolar();
     }
 }
