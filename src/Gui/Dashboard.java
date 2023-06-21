@@ -11,6 +11,7 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.text.Position;
+import Excepciones.MensajeError;
 
 /**
  *
@@ -89,7 +90,12 @@ public class Dashboard extends javax.swing.JFrame {
             
         }
     }
-   
+    
+    public void mostarModificacion(int posicion){
+               jTextField5.setText(empresa.ObtenerTrabajador(posicion).getNombre());
+                   
+            
+    }
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -996,11 +1002,28 @@ public class Dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_jRadioButton6ActionPerformed
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
-        ++posicionmodificar;
+                 
+            if(posicionmodificar == 0){
+                mostarModificacion(posicionmodificar);
+                posicionmodificar++;
+            }
+            else{
+                mostarModificacion(posicionmodificar);          
+            }
+               
+        
     }//GEN-LAST:event_jButton13ActionPerformed
 
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
-        --posicionmodificar;
+            
+            if(posicionmodificar==0){
+                mostarModificacion(posicionmodificar);
+            }
+            else{--posicionmodificar;
+                mostarModificacion(posicionmodificar);
+            }
+                        
+        
     }//GEN-LAST:event_jButton15ActionPerformed
 
     /**
