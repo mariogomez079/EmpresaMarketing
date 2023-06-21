@@ -23,8 +23,6 @@ public class TrabajadorTiempoParcial extends Trabajador implements IRendimiento 
        
     }
     
-    
-    
     public double getCantidadHorasSemanales() {
         return cantidadHorasSemanales;
     }

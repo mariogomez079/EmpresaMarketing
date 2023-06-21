@@ -63,6 +63,7 @@ public class Lista<T> {
         if (posicion > this.cantidadMaxima)
             throw new IndexOutOfBoundsException("La posición está fuera de rango");
         else {
+            this.cantidadReal++;
             for (int i = this.cantidadReal - 1; i > posicion; i--) {
                 elementos[i] = elementos[i - 1];
             }
