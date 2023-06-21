@@ -98,8 +98,32 @@ public class Dashboard extends javax.swing.JFrame {
                jTextField7.setText(empresa.ObtenerTrabajador(posicion).getCargo());
                if (empresa.ObtenerTrabajador(posicion).getSolapin()== null){
                    jTextField8.setText(null);
+                   jRadioButton6.setSelected(true);
+                   jRadioButton5.setSelected(false);
+                   double numero = empresa.ObtenerTrabajador(posicion).getCantidadHorasSemanales();
+                   String texto = Double.toString(numero);
+                   jTextField9.setText(texto);
+                   if (empresa.ObtenerTrabajador(posicion).isGraduado()){
+                       jRadioButton7.setSelected(true);
+                       jRadioButton8.setSelected(false);
+                       
+                   }
+                   else{
+                       jRadioButton7.setSelected(false);
+                       jRadioButton8.setSelected(true);
+                   }
                }
                else{
+                   jRadioButton5.setSelected(true);
+                   jRadioButton6.setSelected(false);
+                   jTextField9.setText(null);
+                   jRadioButton7.setSelected(false);
+                   jRadioButton8.setSelected(false);
+                   jTextField9.setVisible(false);
+                   jRadioButton7.setVisible(false);
+                   jRadioButton8.setVisible(false);
+                   jLabel19.setVisible(false);
+                   jLabel20.setVisible(false);
                    jTextField8.setText(empresa.ObtenerTrabajador(posicion).getSolapin());
                }
                    
@@ -115,6 +139,28 @@ public class Dashboard extends javax.swing.JFrame {
         jComboBox2.setModel(nuevoModelo);
     }
     
+    public void setModificarTiempoCompleto(int posicion,String nombre,String email,String cargo,String solapin){ 
+            empresa.ObtenerTrabajador(posicion).setNombre(nombre);
+            empresa.ObtenerTrabajador(posicion).setEmail(email);
+            empresa.ObtenerTrabajador(posicion).setCargo(cargo);
+            empresa.ObtenerTrabajador(posicion).setSolapin(solapin);
+            empresa.ObtenerTrabajador(posicion).setCantidadHorasSemanales(0);
+    }
+    
+    public void setModificarTiempoParcial(int posicion,String nombre,String email,String cargo,double horastrabajadas,boolean graduado){ 
+            empresa.ObtenerTrabajador(posicion).setNombre(nombre);
+            empresa.ObtenerTrabajador(posicion).setEmail(email);
+            empresa.ObtenerTrabajador(posicion).setCargo(cargo);
+            empresa.ObtenerTrabajador(posicion).setSolapin(null);
+            empresa.ObtenerTrabajador(posicion).setCantidadHorasSemanales(horastrabajadas);
+            if(graduado){
+                    empresa.ObtenerTrabajador(posicion).setGraduado(true);
+            }
+            else{
+                empresa.ObtenerTrabajador(posicion).setGraduado(false);
+            }       
+            
+    }
     
      
     /**
@@ -185,13 +231,13 @@ public class Dashboard extends javax.swing.JFrame {
         jRadioButton6 = new javax.swing.JRadioButton();
         jLabel18 = new javax.swing.JLabel();
         jTextField8 = new javax.swing.JTextField();
-        jSpinner2 = new javax.swing.JSpinner();
         jLabel19 = new javax.swing.JLabel();
         jRadioButton7 = new javax.swing.JRadioButton();
         jLabel20 = new javax.swing.JLabel();
         jRadioButton8 = new javax.swing.JRadioButton();
         jComboBox2 = new javax.swing.JComboBox<>();
         jLabel21 = new javax.swing.JLabel();
+        jTextField9 = new javax.swing.JTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -670,7 +716,6 @@ public class Dashboard extends javax.swing.JFrame {
                         .addGroup(jPanel6Layout.createSequentialGroup()
                             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel19)
-                                .addComponent(jSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel17)
                                 .addComponent(jLabel16)
                                 .addGroup(jPanel6Layout.createSequentialGroup()
@@ -682,13 +727,11 @@ public class Dashboard extends javax.swing.JFrame {
                                     .addGap(6, 6, 6)
                                     .addComponent(jRadioButton7)
                                     .addGap(27, 27, 27)
-                                    .addComponent(jRadioButton8)
-                                    .addGap(72, 72, 72))
-                                .addGroup(jPanel6Layout.createSequentialGroup()
-                                    .addComponent(jLabel20)
-                                    .addGap(208, 208, 208))
+                                    .addComponent(jRadioButton8))
+                                .addComponent(jLabel20)
                                 .addComponent(jLabel14))
-                            .addGap(174, 174, 174))))
+                            .addGap(206, 206, 206)))
+                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(252, 252, 252))
         );
         jPanel6Layout.setVerticalGroup(
@@ -721,7 +764,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel19)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel20)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -959,19 +1002,25 @@ public class Dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
-          
-        posicionmodificar = (int) jComboBox2.getSelectedIndex();
-        
-  empresa.ObtenerTrabajador(posicionmodificar).setNombre(jTextField5.getText());
-        try {
-            empresa.ActualizarTrabajador(posicionmodificar, trabajadores);
-            empresa.EliminarTrabajador(posicionmodificar);
-            reloadCombobox();
-    
-        } catch (ListaLlena ex) {
-            Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
+        int posicionmodificar = jComboBox2.getSelectedIndex();
+
+if (!jTextField8.getText().isEmpty()) {
+    setModificarTiempoCompleto(posicionmodificar, jTextField5.getText(), jTextField6.getText(), jTextField7.getText(), jTextField8.getText());
+} else {
+    boolean esTiempoParcial = jRadioButton7.isSelected();
+    String texto = jTextField9.getText();
+    Double numero;
+    numero = Double.parseDouble(texto);
+    setModificarTiempoParcial(posicionmodificar, jTextField5.getText(), jTextField6.getText(), jTextField7.getText(), numero, esTiempoParcial);
+            try {
+                empresa.ActualizarTrabajador(posicionmodificar, trabajadores);
+                empresa.EliminarTrabajador(posicionmodificar);
+            } catch (ListaLlena ex) {
+                Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
+            }
+}
+
+    reloadCombobox();
  
     }//GEN-LAST:event_jButton14ActionPerformed
 
@@ -1003,7 +1052,7 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel18.setVisible(true);
         jTextField8.setVisible(true);
         jLabel19.setVisible(false);
-        jSpinner2.setVisible(false);
+        jTextField9.setVisible(false);
         jRadioButton7.setVisible(false);
         jRadioButton8.setVisible(false);
         jLabel20.setVisible(false);
@@ -1013,10 +1062,11 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel18.setVisible(false);
         jTextField8.setVisible(false);
         jLabel19.setVisible(true);
-        jSpinner2.setVisible(true);
+        jTextField9.setVisible(true);
         jRadioButton7.setVisible(true);
         jRadioButton8.setVisible(true);
         jLabel20.setVisible(true);
+        jTextField8.setText(null);
     }//GEN-LAST:event_jRadioButton6ActionPerformed
 
     private void jComboBox2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox2ItemStateChanged
@@ -1118,7 +1168,6 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSpinner jSpinner1;
-    private javax.swing.JSpinner jSpinner2;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
@@ -1128,6 +1177,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField jTextField9;
     // End of variables declaration//GEN-END:variables
 
 

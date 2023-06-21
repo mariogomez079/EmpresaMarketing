@@ -738,7 +738,6 @@
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jLabel19" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jSpinner2" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
@@ -752,17 +751,14 @@
                                       <Component id="jRadioButton7" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                                       <Component id="jRadioButton8" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
                                   </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="208" max="-2" attributes="0"/>
-                                  </Group>
+                                  <Component id="jLabel20" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel14" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="174" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="206" max="-2" attributes="0"/>
                           </Group>
                       </Group>
+                      <Component id="jTextField9" alignment="0" min="-2" pref="168" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="252" max="-2" attributes="0"/>
               </Group>
@@ -799,7 +795,7 @@
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jLabel19" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jSpinner2" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextField9" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
@@ -884,8 +880,6 @@
         </Component>
         <Component class="javax.swing.JTextField" name="jTextField8">
         </Component>
-        <Component class="javax.swing.JSpinner" name="jSpinner2">
-        </Component>
         <Component class="javax.swing.JLabel" name="jLabel19">
           <Properties>
             <Property name="text" type="java.lang.String" value="Horas Trabajadas"/>
@@ -923,6 +917,8 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Seleccione el Nombre del Trabajador"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextField9">
         </Component>
       </SubComponents>
     </Container>

@@ -71,6 +71,14 @@ public class Lista<T> {
         }
         return true;
     }
+    
+ /*   public boolean Actualizar(int posicion, T elemento) {
+    if (posicion < 0 || posicion >= this.cantidadReal) {
+        throw new IndexOutOfBoundsException("La posición está fuera de rango");
+    }
+    elementos[posicion] = elemento;
+    return true;
+}*/
 
     public int Longitud() {
         return this.cantidadReal;
