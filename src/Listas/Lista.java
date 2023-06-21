@@ -29,7 +29,7 @@ public class Lista<T> {
     }
 
     // ELIMINAR
-    public boolean Eliminar(int posicion) throws IndexOutOfBoundsException, NullPointerException{
+   public boolean Eliminar(int posicion) throws IndexOutOfBoundsException, NullPointerException{
         if (posicion > this.cantidadMaxima){
             throw new IndexOutOfBoundsException("La posición está fuera de rango");
         }
@@ -43,7 +43,9 @@ public class Lista<T> {
             cantidadReal--;
             return true;
         }
-    }
+   }
+    
+    
 
     // OBTENER
     public T Obtener(int posicion) throws IndexOutOfBoundsException, NullPointerException {

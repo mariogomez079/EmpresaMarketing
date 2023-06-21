@@ -153,12 +153,7 @@ public class Dashboard extends javax.swing.JFrame {
             empresa.ObtenerTrabajador(posicion).setCargo(cargo);
             empresa.ObtenerTrabajador(posicion).setSolapin(null);
             empresa.ObtenerTrabajador(posicion).setCantidadHorasSemanales(horastrabajadas);
-            if(graduado){
-                    empresa.ObtenerTrabajador(posicion).setGraduado(true);
-            }
-            else{
-                empresa.ObtenerTrabajador(posicion).setGraduado(false);
-            }       
+            empresa.ObtenerTrabajador(posicion).setGraduado(graduado);
             
     }
     
@@ -1003,25 +998,30 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
         int posicionmodificar = jComboBox2.getSelectedIndex();
-
-if (!jTextField8.getText().isEmpty()) {
-    setModificarTiempoCompleto(posicionmodificar, jTextField5.getText(), jTextField6.getText(), jTextField7.getText(), jTextField8.getText());
-} else {
-    boolean esTiempoParcial = jRadioButton7.isSelected();
-    String texto = jTextField9.getText();
-    Double numero;
-    numero = Double.parseDouble(texto);
-    setModificarTiempoParcial(posicionmodificar, jTextField5.getText(), jTextField6.getText(), jTextField7.getText(), numero, esTiempoParcial);
-            try {
-                empresa.ActualizarTrabajador(posicionmodificar, trabajadores);
-                empresa.EliminarTrabajador(posicionmodificar);
-            } catch (ListaLlena ex) {
-                Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
+Trabajador trabajador = empresa.ObtenerTrabajador(posicionmodificar);
+if (trabajador != null) {
+            if (!jTextField8.getText().isEmpty()) {
+                setModificarTiempoCompleto(posicionmodificar, jTextField5.getText(), jTextField6.getText(), jTextField7.getText(), jTextField8.getText());
+            } else{
+                
+            boolean esTiempoParcial = false; 
+            if (jRadioButton7.isSelected()) {
+                esTiempoParcial = true;
             }
-}
+                
+                String texto = jTextField9.getText();
+                Double numero;
+                numero = Double.parseDouble(texto);
+                setModificarTiempoParcial(posicionmodificar, jTextField5.getText(), jTextField6.getText(), jTextField7.getText(), numero, esTiempoParcial);
+                        try {
+                            empresa.ActualizarTrabajador(posicionmodificar, trabajadores);
+                        } catch (ListaLlena ex) {
+                            Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+            }
 
-    reloadCombobox();
- 
+                reloadCombobox();
+        }
     }//GEN-LAST:event_jButton14ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
