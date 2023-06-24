@@ -11,19 +11,6 @@ public class ProyectoInternacional extends Proyecto {
     private String nombrePais;
 
     // CONSTRUCTOR
-    public ProyectoInternacional(String nombre, String descripcion, double semanasDuracion) {
-        super(nombre, descripcion, semanasDuracion);
-    }
-
-    public ProyectoInternacional(String nombre, String descripcion, double semanasDuracion, double costoDolar) {
-        super(nombre, descripcion, semanasDuracion);
-        this.costoDolar = costoDolar;
-    }
-
-    public ProyectoInternacional(String nombre, String descripcion, double semanasDuracion, String nombrePais) {
-        super(nombre, descripcion, semanasDuracion);
-        this.nombrePais = nombrePais;
-    }
 
     public ProyectoInternacional(String nombre, String descripcion, double semanasDuracion, double costoDolar, String nombrePais) {
         super(nombre, descripcion, semanasDuracion);
@@ -57,5 +44,13 @@ public class ProyectoInternacional extends Proyecto {
 
     private double CalcularCosto(){
         return super.getSemanasDuracion() * this.getCostoDolar();
+    }
+    
+    public double getCostoPesos() {
+        return 0;
+    }
+    @Override
+    public String CalcularRendimiento() {
+       return null;
     }
 }

@@ -82,8 +82,7 @@ public class TrabajadorTiempoParcial extends Trabajador implements IRendimiento 
             } else {
                 return "Mal";
             }
-        } else {
-            return "El trabajador " + this.getNombre() + "con email " + this.getEmail() + "y cargo " + this.getCargo() + " es graduado";
-        }
+        }else {
+        return null;}
     }
 }

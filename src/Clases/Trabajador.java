@@ -50,7 +50,8 @@ public abstract class Trabajador {
     public abstract boolean isGraduado();
     public abstract void setSolapin(String solapin);
     public abstract void setCantidadHorasSemanales(double cantidadHorasSemanales);
-     public abstract void setGraduado(boolean graduado);
+    public abstract void setGraduado(boolean graduado);
+    public abstract String CalcularRendimiento();
 
     // IMPLEMENTACION DE METODOS
 

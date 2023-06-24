@@ -66,4 +66,8 @@ public class TrabajadorTiempoCompleto extends Trabajador {
             return 1.5 * otrosCargos;
         }
     }
+    
+    public String CalcularRendimiento() {
+    return null;
+    }
 }

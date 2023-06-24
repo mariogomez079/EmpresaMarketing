@@ -34,6 +34,14 @@ public class ProyectoNacional extends Proyecto implements IRendimiento {
     private double CalcularCosto(){
         return super.getSemanasDuracion() * this.getCostoPesos();
     }
+    
+    public String getNombrePais() {
+        return null;
+    }
+    
+    public double getCostoDolar() {
+        return 0;
+    }
 
     @Override
     public String CalcularRendimiento() {

@@ -43,4 +43,9 @@ public abstract class Proyecto {
 
     // IMPLEMENTACION DE METODOS
     public abstract double CalcularCostoProyecto();
+    public abstract String CalcularRendimiento();
+    public abstract double getCostoPesos();
+    public abstract String getNombrePais();
+    public abstract double getCostoDolar();
+    
 }
