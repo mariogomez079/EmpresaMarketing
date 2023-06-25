@@ -54,6 +54,30 @@ public class Dashboard extends javax.swing.JFrame {
         
         
     }
+    
+    private double TotalNacional(){
+       double  totalnacional = 0;
+    for(int i=0; i < empresa.LongitudProyecto(); i++)
+        {
+            double total=0;
+            totalnacional += empresa.ObtenerProyecto(i).getCostoPesos();
+           
+        }
+        return totalnacional;
+    }
+    
+    private double TotalInternacional(){
+       double  totalnacional = 0;
+    for(int i=0; i < empresa.LongitudProyecto(); i++)
+        {
+            double total=0;
+            totalnacional += empresa.ObtenerProyecto(i).getCostoDolar();
+           
+        }
+        return totalnacional;
+    }
+    
+    
     private void addRowTable(){
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
         Object rowData[] = new Object[7];
@@ -336,6 +360,8 @@ public class Dashboard extends javax.swing.JFrame {
         jButton23 = new javax.swing.JButton();
         jButton24 = new javax.swing.JButton();
         jButton25 = new javax.swing.JButton();
+        jButton26 = new javax.swing.JButton();
+        jButton27 = new javax.swing.JButton();
         jPanel12 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable();
@@ -1131,6 +1157,20 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
+        jButton26.setText("totalNac");
+        jButton26.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton26ActionPerformed(evt);
+            }
+        });
+
+        jButton27.setText("totalInt");
+        jButton27.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton27ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
         jPanel11Layout.setHorizontalGroup(
@@ -1146,6 +1186,10 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(jButton24)
                 .addGap(18, 18, 18)
                 .addComponent(jButton25)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton26)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton27)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel11Layout.setVerticalGroup(
@@ -1157,7 +1201,9 @@ public class Dashboard extends javax.swing.JFrame {
                     .addComponent(jButton22)
                     .addComponent(jButton23)
                     .addComponent(jButton24)
-                    .addComponent(jButton25))
+                    .addComponent(jButton25)
+                    .addComponent(jButton26)
+                    .addComponent(jButton27))
                 .addGap(37, 37, 37))
         );
 
@@ -1682,6 +1728,16 @@ public class Dashboard extends javax.swing.JFrame {
         addRowTable5();
     }//GEN-LAST:event_jButton25ActionPerformed
 
+    private void jButton26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton26ActionPerformed
+         JOptionPane.showMessageDialog(this, "Total de cotizacion Nacional " + TotalNacional() , "Proyectos", JOptionPane.INFORMATION_MESSAGE);
+
+    }//GEN-LAST:event_jButton26ActionPerformed
+
+    private void jButton27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton27ActionPerformed
+                 JOptionPane.showMessageDialog(this, "Total de cotizacion Internacional " + TotalInternacional(), "Proyectos", JOptionPane.INFORMATION_MESSAGE);
+
+    }//GEN-LAST:event_jButton27ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1738,6 +1794,8 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JButton jButton23;
     private javax.swing.JButton jButton24;
     private javax.swing.JButton jButton25;
+    private javax.swing.JButton jButton26;
+    private javax.swing.JButton jButton27;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
