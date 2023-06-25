@@ -46,7 +46,5 @@ b) Desarrolle una aplicación con interfaz gráfica que permita
     5. Evaluar a los trabajadores a tiempo parcial no graduados según la evaluación en rendimiento.
     6. Determinar el salario de un trabajador a tiempo completo y a tiempo parcial siendo este último graduado o no.
     7. Determinar cuanto cotiza la empresa por los proyectos nacionales e internacionales que realiza.
-    8.
-    9. Conocer la cantidad de trabajadores a tiempo parcial que no son graduados.
-    10. Conocer el nombre del país del proyecto internacional que más cotiza en la empresa.
+    8. Conocer el nombre del país del proyecto internacional que más cotiza en la empresa.
 
