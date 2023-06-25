@@ -77,6 +77,22 @@ public class Dashboard extends javax.swing.JFrame {
         return totalnacional;
     }
     
+    private String CotizacionMaxInternacional(){         
+        double mayor = 0 ;
+        String nombre = "";
+        for (int i = 1; i < empresa.LongitudProyecto(); i++) {
+            if (empresa.ObtenerProyecto(i).getCostoDolar() > mayor) {
+                mayor = empresa.ObtenerProyecto(i).getCostoDolar();
+                nombre = empresa.ObtenerProyecto(i).getNombre();
+            }
+        }
+        return nombre;
+    }
+    
+   
+   
+
+    
     
     private void addRowTable(){
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
@@ -362,6 +378,7 @@ public class Dashboard extends javax.swing.JFrame {
         jButton25 = new javax.swing.JButton();
         jButton26 = new javax.swing.JButton();
         jButton27 = new javax.swing.JButton();
+        jButton28 = new javax.swing.JButton();
         jPanel12 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable();
@@ -1171,6 +1188,13 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
+        jButton28.setText("Max");
+        jButton28.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton28ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
         jPanel11Layout.setHorizontalGroup(
@@ -1191,6 +1215,10 @@ public class Dashboard extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton27)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton28)
+                .addGap(313, 313, 313))
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1204,7 +1232,9 @@ public class Dashboard extends javax.swing.JFrame {
                     .addComponent(jButton25)
                     .addComponent(jButton26)
                     .addComponent(jButton27))
-                .addGap(37, 37, 37))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton28)
+                .addGap(8, 8, 8))
         );
 
         jPanel12.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -1738,6 +1768,11 @@ public class Dashboard extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButton27ActionPerformed
 
+    private void jButton28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton28ActionPerformed
+                        JOptionPane.showMessageDialog(this, "Mayor cotizacion Internacional " + CotizacionMaxInternacional(), "Proyectos", JOptionPane.INFORMATION_MESSAGE);
+
+    }//GEN-LAST:event_jButton28ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1796,6 +1831,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JButton jButton25;
     private javax.swing.JButton jButton26;
     private javax.swing.JButton jButton27;
+    private javax.swing.JButton jButton28;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
