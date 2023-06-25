@@ -14,6 +14,7 @@ import javax.swing.text.Position;
 import Excepciones.MensajeError;
 import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JTextField;
 
 /**
  *
@@ -93,7 +94,30 @@ public class Dashboard extends javax.swing.JFrame {
     }
     
    
-   
+    private void clear(){
+            jTextField1.setText(null);
+            jTextField2.setText(null);
+            jTextField3.setText(null);
+            jTextField4.setText(null);
+            jTextField5.setText(null);
+            jTextField6.setText(null);
+            jTextField7.setText(null);
+            jTextField8.setText(null);
+            jTextField9.setText(null);
+            jTextField10.setText(null);
+            jTextField11.setText(null);
+            jTextField12.setText(null);
+            jTextField13.setText(null);
+            jRadioButton1.setSelected(false);
+            jRadioButton2.setSelected(false);
+            jSpinner1.setValue(0);
+            jSpinner2.setValue(0);
+            jSpinner3.setValue(0);
+            jRadioButton3.setSelected(false);
+            jRadioButton4.setSelected(false);
+            jRadioButton5.setSelected(false);
+            jRadioButton6.setSelected(false);
+    }
 
     
     
@@ -904,12 +928,23 @@ public class Dashboard extends javax.swing.JFrame {
         });
 
         jButton15.setText("Cancelar");
+        jButton15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton15ActionPerformed(evt);
+            }
+        });
 
         jLabel15.setText("Nombre");
 
         jLabel18.setText("Decripcion");
 
         jLabel19.setText("Semana de Duracion");
+
+        jTextField10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField10ActionPerformed(evt);
+            }
+        });
 
         jLabel20.setText("Pais");
 
@@ -1013,6 +1048,11 @@ public class Dashboard extends javax.swing.JFrame {
         });
 
         jButton18.setText("Cancelar");
+        jButton18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton18ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -1463,7 +1503,22 @@ public class Dashboard extends javax.swing.JFrame {
             jPanel12.setVisible(false); 
             jPanel13.setVisible(false); 
             jPanel14.setVisible(false); 
-             jLabel6.setVisible(false);
+            jLabel6.setVisible(false);
+            jLabel12.setVisible(false);
+            jTextField4.setVisible(false);
+            jLabel9.setVisible(false);
+            jLabel11.setVisible(false);
+            jSpinner1.setVisible(false);
+            jRadioButton3.setVisible(false);
+            jRadioButton4.setVisible(false);
+            jRadioButton3.setVisible(false);
+            jRadioButton4.setVisible(false); 
+            jRadioButton1.setSelected(false);
+            jRadioButton2.setSelected(false);
+            clear();
+          
+        int valor =0;
+        jSpinner1.setValue(valor);
             
             }
             
@@ -1479,7 +1534,16 @@ public class Dashboard extends javax.swing.JFrame {
             jPanel12.setVisible(false); 
             jPanel13.setVisible(false); 
             jPanel14.setVisible(false);
-             jLabel6.setVisible(false);
+            jLabel6.setVisible(false);
+            jLabel20.setVisible(false);
+            jLabel22.setVisible(false);
+            jLabel23.setVisible(false);
+            jTextField10.setVisible(false);
+            jTextField11.setVisible(false);
+            jTextField12.setVisible(false);
+            jRadioButton5.setSelected(false);
+            jRadioButton6.setSelected(false);
+            clear();
         }
                
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -1503,17 +1567,23 @@ public class Dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField2ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+    try {
+    String nombre = jTextField1.getText(); 
+    String email = jTextField2.getText(); 
+    String cargo = jTextField3.getText();
+    if (nombre == null || nombre.trim().isEmpty() || email == null || email.trim().isEmpty() || cargo == null || cargo.trim().isEmpty()) {
+        throw new Exception("La cadena está vacía");
+    }
+    if (!nombre.matches("^[a-zA-Z]+$")) {
+        throw new Exception("La cadena contiene números u otros caracteres");
+    }
         if(jRadioButton1.isSelected())
         {
         trabajadores = new TrabajadorTiempoCompleto(jTextField1.getText(), jTextField2.getText(), jTextField3.getText(), jTextField4.getText());
          try {
              empresa.AdicionarTrabajador(trabajadores);
              
-             // Limpiar
-             jTextField1.setText(null);
-             jTextField2.setText(null);
-             jTextField3.setText(null);
-             jTextField4.setText(null);
+             clear();
         
          } catch (ListaLlena ex) {
              JOptionPane.showMessageDialog(this, "La Empresa ya tiene a todos los trajadores", "Error", JOptionPane.ERROR_MESSAGE);
@@ -1528,11 +1598,7 @@ public class Dashboard extends javax.swing.JFrame {
          try {
              empresa.AdicionarTrabajador(trabajadores);
              
-             // Limpiar
-             jTextField1.setText(null);
-             jTextField2.setText(null);
-             jTextField3.setText(null);
-             jTextField4.setText(null);
+             clear();
         
          } catch (ListaLlena ex) {
              JOptionPane.showMessageDialog(this, "La Empresa ya tiene a todos los trajadores", "Error", JOptionPane.ERROR_MESSAGE);
@@ -1555,6 +1621,15 @@ public class Dashboard extends javax.swing.JFrame {
          }
          }
         }
+     
+    
+} catch (Exception e) {
+    // Manejar la excepción
+   JOptionPane.showMessageDialog(this, "Se produjo una excepción: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+
+} 
+     
+        
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
@@ -1572,10 +1647,7 @@ public class Dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_jRadioButton1ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-            jTextField1.setText(null);
-            jTextField2.setText(null);
-            jTextField3.setText(null);
-            jTextField4.setText(null);
+            clear();
             jPanel4.setVisible(false);
             
     }//GEN-LAST:event_jButton10ActionPerformed
@@ -1614,14 +1686,31 @@ public class Dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-       jPanel5.setVisible(false);
+        clear();
+        jPanel5.setVisible(false);
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
-       
+ try {
+    String nombre = jTextField1.getText(); 
+    String email = jTextField2.getText(); 
+    String cargo = jTextField3.getText();
+    if (nombre == null || nombre.trim().isEmpty() || email == null || email.trim().isEmpty() || cargo == null || cargo.trim().isEmpty()) {
+        throw new Exception("La cadena está vacía");
+    }
+    if (!nombre.matches("^[a-zA-Z]+$")) {
+        throw new Exception("La cadena contiene números u otros caracteres");
+    }              
         int posicionmodificar = jComboBox2.getSelectedIndex();
         setModificarTrabajador(posicionmodificar, jTextField5.getText(), jTextField6.getText(), jTextField7.getText());
         reloadCombobox();
+        clear();
+        
+} catch (Exception e) {
+    // Manejar la excepción
+   JOptionPane.showMessageDialog(this, "Se produjo una excepción: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+
+} 
       
         
     }//GEN-LAST:event_jButton14ActionPerformed
@@ -1641,6 +1730,7 @@ public class Dashboard extends javax.swing.JFrame {
        jPanel13.setVisible(false); 
        jPanel14.setVisible(false); 
     reloadCombobox();
+    clear();
     mostarModificacion(0);}
     if(jLabel2.getText().equals("Proyectos"))
     {
@@ -1657,6 +1747,7 @@ public class Dashboard extends javax.swing.JFrame {
        jPanel13.setVisible(false); 
        jPanel14.setVisible(false); 
        reloadComboboxProyectosModificar();
+       clear();
        mostarModificacionProyectos(0);
     }
     
@@ -1665,7 +1756,8 @@ public class Dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
-        // TODO add your handling code here:
+       clear();
+       jPanel6.setVisible(false);
     }//GEN-LAST:event_jButton16ActionPerformed
 
     private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
@@ -1682,17 +1774,44 @@ public class Dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox2ItemStateChanged
 
     private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
-         int posicionmodificarproyectos = jComboBox4.getSelectedIndex();
+try {
+    String nombre = jTextField14.getText(); 
+    String descripcion = jTextField13.getText(); 
+   
+    if (nombre == null || nombre.trim().isEmpty() || descripcion == null || descripcion.trim().isEmpty()) {
+        throw new Exception("La cadena está vacía");
+    }
+    if (!nombre.matches("^[a-zA-Z]+$")) {
+        throw new Exception("La cadena contiene números u otros caracteres");
+    }
+        int posicionmodificarproyectos = jComboBox4.getSelectedIndex();
           int valor = (int) jSpinner3.getValue();
           setModificarProyectos(posicionmodificarproyectos, jTextField14.getText(), jTextField13.getText(),valor);
-          reloadComboboxProyectosModificar();        
+          reloadComboboxProyectosModificar();  
+          clear();
+    } catch (Exception e) {
+    // Manejar la excepción
+   JOptionPane.showMessageDialog(this, "Se produjo una excepción: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+
+}
     }//GEN-LAST:event_jButton19ActionPerformed
 
     private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
-        // TODO add your handling code here:
+        clear();
+        jPanel10.setVisible(false);
     }//GEN-LAST:event_jButton20ActionPerformed
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+try {
+    String nombre = jTextField8.getText(); 
+    String descripcion = jTextField9.getText(); 
+   
+    if (nombre == null || nombre.trim().isEmpty() || descripcion == null || descripcion.trim().isEmpty()) {
+        throw new Exception("La cadena está vacía");
+    }
+    if (!nombre.matches("^[a-zA-Z]+$")) {
+        throw new Exception("La cadena contiene números u otros caracteres");
+    }
         if(jRadioButton5.isSelected())
         {
             int valornacional = (int) jSpinner2.getValue();
@@ -1700,7 +1819,7 @@ public class Dashboard extends javax.swing.JFrame {
             proyectos = new ProyectoNacional(jTextField8.getText(), jTextField9.getText(), valornacional, costonacional);
             try {
                 empresa.AdicionarProyecto(proyectos);
-                jTextField11.setText(null);
+                clear();
             } catch (ListaLlena ex) {
                 Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -1714,10 +1833,18 @@ public class Dashboard extends javax.swing.JFrame {
             proyectos = new ProyectoInternacional(jTextField8.getText(), jTextField9.getText(), valorinternacional,costointernacional, jTextField10.getText());
             try {
                 empresa.AdicionarProyecto(proyectos);
+                clear();
             } catch (ListaLlena ex) {
                 Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+
+} catch (Exception e) {
+    // Manejar la excepción
+   JOptionPane.showMessageDialog(this, "Se produjo una excepción: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+
+}
+
     }//GEN-LAST:event_jButton13ActionPerformed
 
     private void jRadioButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton5ActionPerformed
@@ -1833,6 +1960,20 @@ public class Dashboard extends javax.swing.JFrame {
                  JOptionPane.showMessageDialog(this, "Mayor pais cotizador " + CotizacionMaxInternacional(), "Proyectos", JOptionPane.INFORMATION_MESSAGE);
                 
     }//GEN-LAST:event_jMenuItem8ActionPerformed
+
+    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
+        clear();
+        jPanel8.setVisible(false);
+    }//GEN-LAST:event_jButton15ActionPerformed
+
+    private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
+        clear();
+        jPanel9.setVisible(false);
+    }//GEN-LAST:event_jButton18ActionPerformed
+
+    private void jTextField10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField10ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField10ActionPerformed
 
     /**
      * @param args the command line arguments
